@@ -28,5 +28,45 @@
         <button type="submit">전송</button>
       </fieldset>
     </form>
+    <hr />
+    <form action="https://formspree.io/f/xeqwwbwk" method="post">
+      <!-- 검색어랑 전화번호 확인해보면 검색어는 줄바꿈 안해서 공백이 없고 전화번호는 줄바꿈해서 공백이 있다 -->
+      <div><label for="search">검색어</label><input required placeholder="검색어를 입력하세요" id="search" type="search" name="search" /></div>
+      <div>
+        <label for="userTel">전화번호</label>
+        <input required id="userTel" type="tel" name="userTel" />
+      </div>
+      <!-- checkbox : 체크박스 서식 -->
+      <div>
+        <input type="checkbox" checked value="html" name="bootcamp" id="bootcampHtml" />
+        <label for="bootcampHtml">HTML</label>
+      </div>
+      <div>
+        <!-- 아이디로 연결된건 명시적인 레이블링 -->
+        <input type="checkbox" value="css" name="bootcamp" id="bootcampCss" />
+        <label for="bootcampCss">CSS</label>
+      </div>
+      <!-- radio : 라디오 서식 -->
+      <div>
+        <!-- 암묵적인 레이블링-->
+        <!-- 암묵적인 레이블링보다는 명시적인 레이블링을 권장함 -->
+        <label>
+          <input type="radio" checked name="classRoom" value="classRoom1" />
+          회고 1팀
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" name="classRoom" value="classRoom2" />
+          회고 2팀
+        </label>
+      </div>
+      <!-- 버튼 (전속, 초기화, 일반버튼) -->
+      <div>
+        <input type="submit" value="전송" />
+        <input type="reset" value="초기화" />
+        <input type="button" value="버튼" />
+      </div>
+    </form>
   </body>
 </html>
