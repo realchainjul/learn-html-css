@@ -1,0 +1,37 @@
+/* 본문의 기본 여백 설정 */
+body {
+  margin: 20px;
+  color: gray;
+}
+
+/* 상속 */
+/* 이게 왜 상속이냐 div를 선택했지 p랑 strong이런걸 선택한게 아니 잖아 그런데 다 보라색으로 컬러 바뀜 이걸 상속이라고 함 */
+a {
+  /* 부모로 부터 명시적으로 상속받아서 사용할꺼라 라는 것 이걸 왜 쓰냐 a 링크 태그는 webkit? 뭐 이런게 자동으로 있어서 안바뀔때가 있어서 저렇게 넣은거임*/
+  color: inherit;
+}
+.wrapper {
+  color: purple;
+  border: 1px solid green;
+}
+
+/* 겹침 */
+/* 요소안에 .like 도 같이 써서 요소p 인 1점 .like 인 10점 더해서 11점으로 점수가 더 높기 때문에 아래 .like보다 우선순위 높음 */
+/* p.like {
+  color: blue;
+} */
+
+/* 와우 클래스 로 2개 있는건 20점이잖아 이렇게 작성하면 얘네가 더 우선순위 높아짐 */
+/* .wrapper .like {
+  color: red;
+} */
+
+/* 단계별로 하면 편하게 볼 수 ㅣㅇㅆ음 */
+/* +는 그 위 요소들을 의미  근데 id 키워드 쓰면 잘 안바뀌는거 알? class 위주로 쓰자*/
+body a + h1 + div#coding.wrapper p.like {
+  color: blue;
+}
+h1 + div#coding.wrapper p.like {
+  color: red;
+  /* color: red !important;  임폴턴트는 왠만해서는 쓰지말자 유지보수가 어려워짐*/
+}
