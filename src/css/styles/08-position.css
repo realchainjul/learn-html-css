@@ -1,0 +1,45 @@
+body {
+  margin: 20px;
+}
+
+.wrapper {
+  width: 500px;
+  border: 2px solid red;
+  position: relative;
+}
+/* position 지정안하면 기본값으로 static임 */
+/* position : relative 즉 움직일 수있는 상태를 부여한거임*/
+.like {
+  background-color: #ffc;
+  /* relative는 부모컨테이너만큼 width는 그대로 설정된후 옆으로 이동가능하게 하는거임*/
+  position: relative;
+  left: 50px;
+  bottom: 20px;
+}
+
+/* position : absolute */
+.bootcamp {
+  background-color: #fcf;
+  /* absolute는 바디 를 기준으로 50px 떨어지게 한거  relative랑 다른게 이거임*/
+  /* absolute는 자기 부모가 static이면 무시하고 그위 상위로 따져서 동작함 static이면 동작안하고 */
+  position: absolute;
+  left: 50px;
+  top: 100px;
+}
+
+/* position: fixed */
+.school {
+  background-color: #cff;
+  /* fixed는 뷰포트 기준임 */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+/* position: sticky */
+h1 {
+  background-color: #cfc;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
