@@ -1,0 +1,37 @@
+body {
+  margin: 20px;
+}
+
+/* css 중첩 선택자 */
+/* 하위 선택자, 문맥 선택자 공백 띄우는 방식 */
+/* 자식 선택자 */
+.likelion {
+  background-color: #ffc;
+  /* 중첩하기 전 빈줄을 한줄 삽입하고 입력하는게 관례임 */
+
+  /* 자식선택자임 > 이기호가 likelion안에서 첫번째 뎁스에만 적용하라는 말임 */
+  > ul {
+    list-style-image: url('/src/assets/thumbnail/new.png');
+  }
+
+  /* 하위 선택자, 문맥 선택자 */
+  ul {
+    padding-left: 40px;
+  }
+
+  li {
+    margin: 10px 0;
+
+    li:first-child {
+      color: red;
+    }
+  }
+  .sub-last {
+    background-color: #cff;
+
+    &:hover {
+      background-color: darkblue;
+      color: white;
+    }
+  }
+}
