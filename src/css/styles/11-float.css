@@ -1,0 +1,38 @@
+body {
+  margin: 20px;
+}
+
+/* float */
+.wrapper {
+  background-color: #ffc;
+  width: 500px;
+  margin: 20px 0;
+  /* flowroot를 하면 자식의 높이를 그대로 끌고 오게 해서 여기를 안고쳐도 자식요소만 바꿔도 알아서 높이를 지정해줌 */
+  display: flow-root;
+
+  div {
+    border: 1px solid currentColor;
+    height: 100px;
+    margin: 10px;
+  }
+
+  .box1 {
+    background-color: orangered;
+    float: left;
+  }
+
+  .box2 {
+    background-color: lightgreen;
+    float: left;
+  }
+
+  .box3 {
+    background-color: pink;
+    float: left;
+  }
+
+  .box4 {
+    background-color: aqua;
+    float: left;
+  }
+}
