@@ -1,0 +1,24 @@
+@property --text-color {
+  syntax: '<color>';
+  /* 아래를 false로 한건 부모거를 그대로 상속하냐? 이걸 물어본거 안한다고 한거임 true하면 상속가능 */
+  inherits: false;
+  initial-value: #f0c;
+}
+
+body {
+  margin: 20px;
+  color: var(--text-color);
+}
+
+div {
+  /* 얘는 다른값으로 갱신한거를 칼라로 생각한거라 갱신을 해도 기본적으로 상속되지 않음 그래서 아래 p는 초기값을 가져가는거임 */
+  --text-color: #00f;
+  /* 프로퍼티에 있는것보다 나보다 가까운곳에 있는걸 가져옴 */
+
+  color: var(--text-color);
+
+  /* 자식요소는 위 부모가 아닌 맨 처음 초기화값 즉 핑크색이 나오는거임 --textcolor해도 */
+  p {
+    color: var(--text-color);
+  }
+}
