@@ -30,19 +30,21 @@ body {
   }
 } */
 
+/* 컴포넌트 */
 .term {
-  background-color: #ffc;
   --accent-color: #296897;
+  --text-size: 1rem;
   display: flow-root;
   /* 고정하는 방식은 유연하지 않음 */
   /* width: 218px; */
-  font-size: 14px;
+  font-size: var(--text-size);
 
   .subject {
     font-weight: 600;
     color: var(--accent-color);
     /* 인라인 줘도 float주면 무조건 block으로 처리함 */
     /* width: 142px; */
+    font-size: 1.1em;
   }
 
   .subject,
@@ -58,5 +60,45 @@ body {
 
   .description {
     margin-top: 10px;
+    font-size: 1em;
+  }
+}
+
+/* 레이아웃 */
+.terms {
+  --gray-700: #7a7a7a;
+  --gray-600: #cccccc;
+  --gray-500: #eeeeee;
+  --spacing: 1rem;
+
+  /* 처음 var는 600컬러를 바탕으로 하겠다는 것  */
+  background: var(--gray-600) linear-gradient(var(--gray-600), var(--gray-500));
+  border: 1px solid var(--gray-700);
+  border-radius: 10px;
+  padding: var(--spacing);
+
+  .headline {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing);
+  }
+
+  .term {
+    margin-top: calc(var(--spacing) - 4px);
+  }
+
+  & div:nth-child(3) {
+    background-color: pink;
+
+    .subject,
+    .description {
+      float: left;
+    }
+
+    .thumbnail {
+      float: right;
+      /* 마진 0 줘야 그림이 오른쪽에 닥 붙음 */
+      margin-right: 0;
+    }
   }
 }
