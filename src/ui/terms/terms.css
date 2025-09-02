@@ -55,7 +55,6 @@ body {
 
   .thumbnail {
     float: left;
-    margin-right: 16px;
   }
 
   .description {
@@ -76,6 +75,8 @@ body {
   border: 1px solid var(--gray-700);
   border-radius: 10px;
   padding: var(--spacing);
+  /* 다른건 반응형으로 만들어도 부모속성에 width속성 추가하면 크기 딱 맞음 */
+  width: 250px;
 
   .headline {
     font-size: 1.25rem;
@@ -87,9 +88,12 @@ body {
     margin-top: calc(var(--spacing) - 4px);
   }
 
-  & div:nth-child(3) {
-    background-color: pink;
+  /* div가 아닌 .term을 해주는게 위 웹관련 용어 타이틀은 끼지 않고 내용만 해줌 */
+  /* odd= 홀수 even=짝수 */
+  /* 2n은 두개씩 선택 */
+  /* 2n + 1은 두개 묶은 것중 첫번째  */
 
+  & .term:nth-child(odd) {
     .subject,
     .description {
       float: left;
@@ -98,7 +102,6 @@ body {
     .thumbnail {
       float: right;
       /* 마진 0 줘야 그림이 오른쪽에 닥 붙음 */
-      margin-right: 0;
     }
   }
 }
