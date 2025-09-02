@@ -1,0 +1,62 @@
+body {
+  margin: 20px;
+}
+
+/* 컴포넌트
+.term {
+  background-color: #ffc;
+  width: 218px;
+  display: flow-root;
+
+  .subject {
+    font-size: 14px;
+    font-weight: 400;
+    color: #296897;
+    margin-left: 78px;
+    position: absolute;
+  }
+
+  .thumbnail {
+    float: left;
+    position: absolute;
+    width: 60px;
+    height: 68px;
+    margin-right: 18px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-left: 78px;
+  }
+} */
+
+.term {
+  background-color: #ffc;
+  --accent-color: #296897;
+  display: flow-root;
+  /* 고정하는 방식은 유연하지 않음 */
+  /* width: 218px; */
+  font-size: 14px;
+
+  .subject {
+    font-weight: 600;
+    color: var(--accent-color);
+    /* 인라인 줘도 float주면 무조건 block으로 처리함 */
+    /* width: 142px; */
+  }
+
+  .subject,
+  .description {
+    float: right;
+    width: calc(100% - 76px);
+  }
+
+  .thumbnail {
+    float: left;
+    margin-right: 16px;
+  }
+
+  .description {
+    margin-top: 10px;
+  }
+}
