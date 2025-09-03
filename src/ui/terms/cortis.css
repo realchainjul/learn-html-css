@@ -1,0 +1,48 @@
+body {
+  margin: 20px;
+}
+
+/* 컴포넌트 */
+.cortis {
+  color: white;
+  display: flow-root;
+  padding: 10px;
+
+  .album-title,
+  .album-price,
+  .link {
+    float: right;
+    width: calc(100% - 76px);
+  }
+
+  .link {
+    margin-top: 12px;
+  }
+
+  .album-cover {
+    float: left;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+}
+
+/* 레이아웃 */
+.cortiss {
+  background-color: black;
+  width: 250px;
+  border-radius: 20px;
+
+  & .cortis:nth-child(2n + 2) {
+    .album-title,
+    .album-price,
+    .link {
+      float: left;
+    }
+
+    .album-cover {
+      float: right;
+    }
+  }
+}

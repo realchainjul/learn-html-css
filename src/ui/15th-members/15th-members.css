@@ -1,0 +1,99 @@
+body {
+  margin: 20px;
+}
+
+h1 {
+  margin-block-end: 20px;
+}
+
+/* .members-wrapper {
+  block-size: 500px;
+  overflow: auto;
+}
+
+.members {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  border-collapse: collapse;
+  border: 1px solid var(--black);
+  thead,
+  tfoot {
+    height: 50px;
+    background-color: black;
+    color: white;
+  }
+
+  thead {
+    position: sticky;
+    top: 0;
+  }
+
+  tbody {
+    tr {
+      height: 50px;
+    }
+
+    tr:nth-child(2n + 2) {
+      background-color: var(--gray);
+    }
+  }
+} */
+
+.members-wrapper {
+  block-size: 500px;
+  overflow: auto;
+
+  table {
+    border: 1px solid var(--black);
+    width: 100%;
+    border-collapse: collapse;
+    /* 보더와 보더 사이 를 의미 */
+    border-spacing: 0;
+    /* 얇게 전체 border가 나오고 겹쳐지는게 하려면 둘다 적어야한다 collapse, spacing 둘다 */
+  }
+
+  .number {
+    inline-size: 10%;
+  }
+
+  .name {
+    inline-size: 20%;
+  }
+
+  .email {
+    inline-size: 30%;
+  }
+
+  .phone {
+    inline-size: 40%;
+  }
+
+  thead tr {
+    position: sticky;
+    top: 0;
+  }
+
+  th {
+    /* 줄바꿈 */
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    text-align: center;
+    /* 어머 미친 em 을 활용하면 글자 크기 늘리면 padding 도 같이 늘어남 반응형 생각하면 em을 많이 쓰자 */
+    padding: 1em;
+    font-size: 0.5em 1em;
+  }
+
+  thead tr,
+  tfoot tr {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--gray);
+  }
+}
