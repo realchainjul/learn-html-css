@@ -1,0 +1,121 @@
+body {
+  margin: 20px;
+}
+
+.like {
+  background-color: #ffc;
+  box-shadow: 0 0 0 1px red;
+  inline-size: 1000px;
+  block-size: 100px;
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: nowrap; */
+  /* 위 두개 direction, wrap을 한번에 작성하는게 flow임 속기법임 */
+  /* flex-direction, flex-wrap 속성을 한 번에 선언 */
+  flex-flow: row nowrap;
+  /* 메인 축 정렬 */
+  justify-content: end;
+  /* 교차 축 정렬 */
+  align-items: center;
+
+  /* like 안에 div를 모두 말하는것 */
+  > div {
+    inline-size: 200px;
+    background: aqua;
+  }
+}
+
+.lion {
+  background-color: #ffc;
+  box-shadow: 0 0 0 1px red;
+  inline-size: 500px;
+  block-size: 100px;
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: nowrap; */
+  /* 위 두개 direction, wrap을 한번에 작성하는게 flow임 속기법임 */
+  flex-flow: row wrap;
+  justify-content: end;
+  /* 아래처럼 item과 content가 있을때는 content가 우선순위가 높다 */
+  align-items: center;
+  align-content: center;
+
+  /* like 안에 div를 모두 말하는것 */
+  > div {
+    inline-size: 200px;
+    background: aqua;
+  }
+}
+
+/* flex 아이템 관련 속성 */
+.bootcamp {
+  background: pink;
+  box-shadow: 0 0 0 1px blue;
+  inline-size: 400px;
+  display: flex;
+  flex-flow: row nowrap;
+
+  > div {
+    inline-size: 125px;
+  }
+
+  .bootcamp-item1 {
+    background-color: skyblue;
+    flex-shrink: 1;
+  }
+
+  .bootcamp-item2 {
+    background-color: silver;
+    flex-shrink: 2;
+  }
+
+  .bootcamp-item3 {
+    background-color: lime;
+    /* order = 순서를 지정해줌 즉 배치되는 순서를 지정해주는거임  */
+    order: 1;
+    flex-shrink: 1;
+  }
+  .bootcamp-item4 {
+    background-color: orange;
+    /* order = 순서를 지정해줌 즉 배치되는 순서를 지정해주는거임  */
+    order: -1;
+    flex-shrink: 1;
+  }
+}
+
+.frontend {
+  background: pink;
+  box-shadow: 0 0 0 1px blue;
+  inline-size: 1000px;
+  display: flex;
+  flex-flow: row nowrap;
+
+  > div {
+    /* inline-size: 125px; */
+    /* basis는 width, inlinesize와 같지만 width, inlinesize둘중 하나만 적혀있으면 얘네가 더 우선순위가 높아서 basis는 무시됨
+     */
+    flex-basis: 0;
+  }
+
+  .frontend-item1 {
+    background: skyblue;
+    flex-grow: 1;
+  }
+
+  .frontend-item2 {
+    background: silver;
+    flex-grow: 0;
+  }
+
+  .frontend-item3 {
+    background: lime;
+
+    flex-grow: 0;
+  }
+
+  .frontend-item4 {
+    background: salmon;
+
+    flex-grow: 1;
+  }
+}
