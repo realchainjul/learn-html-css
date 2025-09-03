@@ -1,0 +1,52 @@
+body {
+  margin: 20px;
+}
+
+/* 여백 20식 컨텐츠들은 4px */
+.notification {
+  --green: #22be61;
+  --gray: #9b9a90;
+  --black: #121212;
+  --white: #fff;
+
+  border: 1px solid var(--gray);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1.25rem;
+  /* row축일때 y축방향을 배치를 원하면 align-items */
+  align-items: center;
+
+  .notification-icon {
+    flex: 0 0 auto;
+  }
+
+  .notification-content {
+    /* 컨텐츠 부분만 유연하게 만든거임 */
+    flex: 1 1 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 4px;
+
+    strong {
+      color: var(--green);
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    time {
+      color: var(--green);
+      font-size: 0.75rem;
+      margin-inline-start: auto;
+    }
+
+    p {
+      /* p에 width값을 줘서 한 공간을 다 차지하게 하면 줄바꿈으로 아래로 내려감 */
+      inline-size: 100%;
+      color: var(--gray);
+      font-size: 0.875rem;
+    }
+  }
+}
