@@ -140,3 +140,58 @@ body {
     }
   }
 }
+
+/* 입력서식 */
+.input {
+  --primary-color: var(--red-500);
+  --text-color: var(--gray-700);
+
+  color: var(--text-color);
+  border: 1px solid currentColor;
+  padding: 12px 20px;
+  position: relative;
+
+  &:focus-within {
+    background-color: #ffc;
+
+    label {
+      color: var(--primary-color);
+      font-size: 10px;
+      translate: 0 -150%;
+    }
+  }
+
+  /* display: inline-flex;
+  position: relative;
+  display: flow-root; */
+
+  label {
+    /* position: absolute; */
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 24px;
+    /* 부모 상자가 아무리 늘어나도 translate로 지정해주면 */
+    translate: 0 -50%;
+  }
+
+  input {
+    /* flex-grow: 1; */
+    inline-size: 100%;
+    /* 어 border, 배경 없애서 안보이게 해서 부모크기가 input크기처럼 보이게 하는 트릭을 씀 */
+    border: 0;
+    background: none;
+    outline: none;
+  }
+}
+
+.input-wrapper {
+  --primary-color: var(--red-500);
+
+  p {
+    color: var(--red-500);
+    font-size: 12px;
+    margin-block: 4px;
+    margin-inline-start: 24px;
+    display: none;
+  }
+}
