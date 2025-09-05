@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light dark;
+}
+
+/* light-dark() 함수 이용 */
+body {
+  margin: 20px;
+  color: light-dark(var(--black), var(--gray));
+  background: light-dark(var(--gray), var(--black));
+}
+
+/* 미디어쿼리 이용해서 조건식으로 한 방법 prefers color scheme */
+/* body {
+  margin: 20px;
+
+  background: var(--gray);
+  color: var(--black);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--black);
+    color: var(--gray);
+  }
+} */
