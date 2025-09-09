@@ -58,13 +58,97 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr 1fr 1fr;
+
+  .euid1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 4;
+  }
+
+  .euid2 {
+    grid-row-start: 4;
+    grid-column-start: 4;
+    /* 한칸짜리는 end 생략 가능 */
+    /* grid-row-end: 5;
+    grid-column-end: 5; */
+  }
+  .euid3 {
+    grid-row-start: 1;
+    grid-column-start: 4;
+    /* 한칸짜리는 end 생략 가능 */
+    /* grid-row-end: 2;
+    grid-column-end: 5; */
+  }
+  .euid4 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    /* 한칸짜리는 end 생략 가능 */
+    /* grid-row-end: 4;
+    grid-column-end: 2; */
+  }
+  .euid5 {
+    /* grid-row-start: 3;
+    grid-column-start: 2;
+    grid-row-end: 5;
+    grid-column-end: 4; */
+    /* 위 4번적어야 하는거 단축 표기법 아래처럼 가능 */
+    grid-row: 3/5;
+    grid-column: 2/4;
+  }
+  .euid6 {
+    /* grid-row-start: 2;
+    grid-column-start: 4;
+    grid-row-end: 4;
+    grid-column-end: 5; */
+    /* 위 4개 더 축소 가능;; 위 적은거 순서대로라 기억해놔야함 start먼저  */
+    grid-area: 2 / 4 / 4 / 5;
+    /* span = 병합 */
+    /* grid-row: 2 / span 2; */
+  }
+  .euid7 {
+    /* grid-row-start: 4;
+    grid-column-start: 1; */
+    /* 한칸짜리는 end 생략 가능 */
+    /* grid-row-end: 5;
+    grid-column-end: 2; */
+    grid-area: 4 / 1;
+  }
 }
 
+/* 그리드 이름 기반 레이아웃 */
 .frontend {
-  background: orange;
-  inline-size: 500px;
+  inline-size: 80%;
   block-size: 200px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(50px, 1fr) minmax(10rem, 1fr) minmax(15%, 1fr) minmax(100px, 1fr);
+  grid-template-rows: repeat(4, minmax(50px, 1fr));
+  grid-template-areas:
+  /* .은 공란으로 두어라 하는 것  */
+    'box1 box1 box3 .'
+    'box1 box1 box6 box6'
+    'box4 box5 box5 box2'
+    'box7 box5 box5 box2';
+
+  .frontend1 {
+    grid-area: box1;
+  }
+  .frontend2 {
+    grid-area: box2;
+  }
+  .frontend3 {
+    grid-area: box3;
+  }
+  .frontend4 {
+    grid-area: box4;
+  }
+  .frontend5 {
+    grid-area: box5;
+  }
+  .frontend6 {
+    grid-area: box6;
+  }
+  .frontend7 {
+    grid-area: box7;
+  }
 }
