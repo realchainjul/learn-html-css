@@ -232,9 +232,10 @@ body > a:first-child {
 
         .switch {
           /* 3글자 만큼 */
-          inline-size: 2.5em;
+          inline-size: 2em;
           display: flex;
           justify-content: end;
+          margin-inline-start: 0.5em;
         }
       }
     }
