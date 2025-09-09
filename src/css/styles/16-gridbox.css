@@ -44,10 +44,27 @@ body {
 .lion {
   background: aqua;
   inline-size: 500px;
-  block-size: 200px;
+  block-size: 300px;
   display: grid;
   grid-template-columns: 50px 6.25rem 15% 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 50px);
+  /* 지금 부모크기보다 열의 너비가 작았을때 jus-con 해야 보인다 지금 크기 딱맞아서 안보이느거임 */
+  justify-content: center;
+  /* 행안에서 센터를 의미 */
+  /* 잘 이동한거지 모르겠으면 개발자도구에서 layout grid 오버레이 켜봐라 */
+  align-content: center;
+  /* justify-items: center;
+  align-items: center; */
+  /* 위 items 단축어임 place는  */
+  place-items: center;
+
+  > div:nth-child(odd) {
+    order: 1;
+  }
+
+  .lion {
+    justify-self: end;
+  }
 }
 
 /* 열과 행의 크기를 - repeat() 함수 활용*/
