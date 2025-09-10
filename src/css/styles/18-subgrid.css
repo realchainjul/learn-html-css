@@ -1,0 +1,60 @@
+body {
+  margin: 20px;
+}
+/* 카드 */
+
+.card {
+  border: 1px solid currentColor;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+
+  padding: 16px;
+  gap: 16px;
+
+  figure {
+    /* inline-size: 200px; */
+    aspect-ratio: 2 / 1;
+    /* box-shadow: 0 0 0 10px blue; */
+
+    img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+      object-position: 20% 30%;
+    }
+  }
+
+  p {
+    /* 한 줄 높이 */
+    line-height: 1.5;
+    font-size: 16px;
+    /* 자간 */
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    background: darkblue;
+    color: white;
+    justify-self: end;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
+  /* img {
+    inline-size: 200px;
+    block-size: 200px;
+  } */
+}
+
+/* 카드 레이아웃 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(4, auto);
+  gap: 16px;
+
+  .card {
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+  }
+}
