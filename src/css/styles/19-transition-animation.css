@@ -1,0 +1,117 @@
+body {
+  margin: 20px;
+}
+
+/* transition - :hover */
+.euid {
+  padding: 16px;
+  border: 1px solid currentColor;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  gap: 10px;
+  /* coloumn 값을 모를때 전체 쓰고 싶을대 -1쓰면됨 */
+  grid-column: 1/-1;
+
+  span {
+    background: lightgreen;
+    padding: 10px;
+    transition-property: background;
+    transition-duration: 2000ms;
+
+    &:hover {
+      background: pink;
+    }
+  }
+}
+
+/* container 공통 */
+.container {
+  padding: 16px;
+  border: 1px solid currentColor;
+
+  > div {
+    inline-size: 80px;
+    block-size: 80px;
+    background: yellow;
+    text-align: center;
+    align-content: center;
+  }
+}
+
+/* translate - 이동 */
+.like {
+  .translate {
+    /* property는 애니메이션 시킬 이름을 적어야함 저기 active에 translate적혀있으니 그걸로 적어야함 */
+    transition-property: translate;
+    transition-duration: 1000ms;
+
+    &.active {
+      /* transform: translate(100px, 0); */
+      translate: 100px 0;
+    }
+  }
+}
+/* skew- 기울이기 */
+.lion {
+  .skew {
+    /* property는 애니메이션 시킬 이름을 적어야함 저기 active에 translate적혀있으니 그걸로 적어야함 */
+    transition-property: transform;
+    transition-duration: 1000ms;
+
+    &.active {
+      transform: skew(-15deg, 35deg) translateX(100px);
+      /* translate: 100px 0; */
+    }
+  }
+}
+
+/* rotate-회전하기 */
+.bootcamp {
+  .rotate {
+    /* property는 애니메이션 시킬 이름을 적어야함 저기 active에 translate적혀있으니 그걸로 적어야함 */
+    /* transition-property: rotate, translate, background;
+    transition-duration: 1000ms, 500ms, 500ms;
+    transition-timing-function: ease-in-out, linear;
+    transition-delay: 0ms, 1000ms, 1500ms; */
+    /* 아래는 위 코드 속기법 */
+    transition:
+      translate 1000ms ease-in-out 0ms,
+      rotate 500ms linear 1000ms,
+      background 500ms ease 1500ms;
+    border-radius: 50%;
+
+    &.active {
+      /* transform: rotate(45deg) translateX(100px); */
+      translate: 100px 0;
+      rotate: 1turn;
+      background: pink;
+    }
+  }
+}
+
+/* scale- 크기변경 */
+.frontend {
+  .scale {
+    transition: scale 1000ms;
+    transform-origin: 0 0;
+
+    &.active {
+      /* transform: scale(2, 1); */
+      scale: 2 1;
+    }
+  }
+}
+
+/* 그리드 레이아웃 */
+.wrapper {
+  display: grid;
+  gap: 10px;
+  /* auto-fill, auto-fit 차이 초대화면 남는 부분 알아서 채워지게 fit 은 내 컨텐츠로 화면 채워지게 보통 fit을 많이 씀 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-rows: repeat(3, 200px); */
+  /* grid-template-rows: repeat(4, 200px); */
+  grid-auto-rows: 200px;
+  grid-auto-flow: row;
+}
