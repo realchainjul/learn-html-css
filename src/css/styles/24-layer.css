@@ -1,0 +1,33 @@
+body {
+  margin: 20px;
+}
+
+@layer module, state;
+
+.alert,
+p {
+  padding: 16px;
+}
+
+@layer {
+  .alert {
+    background: purple;
+  }
+}
+
+@layer state {
+  .alert {
+    background-color: brown;
+  }
+  p {
+    border: medium solid limegreen;
+  }
+}
+
+@layer module {
+  .alert {
+    border: medium solid violet;
+    background-color: yellow;
+    color: white;
+  }
+}
